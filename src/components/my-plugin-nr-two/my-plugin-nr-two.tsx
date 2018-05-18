@@ -12,7 +12,7 @@ export class MyPluginNrTwo {
   render() {
     return (
       <div>
-        Plugin nr two {this.first} {this.last}
+        Plugin nr twox {this.first} {this.last}
       </div>
     );
   }
