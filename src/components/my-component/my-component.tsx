@@ -12,7 +12,7 @@ export class MyComponent {
 
   render() {
     return (
-      <div class="hej">
+      <div>
         Hello, World! I'm {this.first} {this.last}
       </div>
     );
