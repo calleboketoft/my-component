@@ -1,10 +1,10 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'mypluginnrtwo',
   outputTargets:[
-    { 
-      type: 'dist' 
+    {
+      type: 'dist'
     },
-    { 
+    {
       type: 'www',
       serviceWorker: false
     }

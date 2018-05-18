@@ -1,11 +1,10 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
+  tag: 'my-plugin-nr-two',
   shadow: true
 })
-export class MyComponent {
+export class MyPluginNrTwo {
 
   @Prop() first: string;
   @Prop() last: string;
@@ -13,7 +12,7 @@ export class MyComponent {
   render() {
     return (
       <div>
-        Hello, World! I'm {this.first} {this.last}
+        Plugin nr two {this.first} {this.last}
       </div>
     );
   }

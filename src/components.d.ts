@@ -27,31 +27,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
+    interface MyPluginNrTwo {
       'first': string;
       'last': string;
     }
   }
 
-  interface HTMLMyComponentElement extends StencilComponents.MyComponent, HTMLStencilElement {}
+  interface HTMLMyPluginNrTwoElement extends StencilComponents.MyPluginNrTwo, HTMLStencilElement {}
 
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLMyPluginNrTwoElement: {
+    prototype: HTMLMyPluginNrTwoElement;
+    new (): HTMLMyPluginNrTwoElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-plugin-nr-two': HTMLMyPluginNrTwoElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-plugin-nr-two': HTMLMyPluginNrTwoElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'my-plugin-nr-two': JSXElements.MyPluginNrTwoAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
+    export interface MyPluginNrTwoAttributes extends HTMLAttributes {
       'first'?: string;
       'last'?: string;
     }
