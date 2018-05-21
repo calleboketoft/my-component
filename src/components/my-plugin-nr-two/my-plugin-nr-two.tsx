@@ -13,7 +13,16 @@ export class MyPluginNrTwo {
     return (
       <div>
         Plugin nr twox {this.first} {this.last}
+        <button onClick={ () => this.handleClick() }>
+          Send data to platform
+        </button>
       </div>
     );
+  }
+
+  handleClick () {
+    const dataForPlatform = 'some data for parent'
+    console.log(window['platformPluginComm'])
+    window['platformPluginComm'].sendDataToPlatform(dataForPlatform)
   }
 }
