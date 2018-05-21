@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'my-plugin-nr-two',
@@ -8,7 +8,7 @@ export class MyPluginNrTwo {
   render() {
     return (
       <div>
-        Plugin nr two
+        Plugin nr two &nbsp;&nbsp;
         <button onClick={ () => this.sendDataToPlatform() }>
           Send data to platform
         </button>
