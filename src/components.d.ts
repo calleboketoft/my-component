@@ -28,8 +28,7 @@ declare global {
 
   namespace StencilComponents {
     interface MyPluginNrTwo {
-      'first': string;
-      'last': string;
+
     }
   }
 
@@ -52,8 +51,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MyPluginNrTwoAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+
     }
   }
 }

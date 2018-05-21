@@ -5,24 +5,28 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 export class MyPluginNrTwo {
-
-  @Prop() first: string;
-  @Prop() last: string;
-
   render() {
     return (
       <div>
-        Plugin nr twox {this.first} {this.last}
-        <button onClick={ () => this.handleClick() }>
+        Plugin nr two
+        <button onClick={ () => this.sendDataToPlatform() }>
           Send data to platform
         </button>
       </div>
     );
   }
 
-  handleClick () {
-    const dataForPlatform = 'some data for parent'
-    console.log(window['platformPluginComm'])
+  componentDidLoad() {
+    console.log('registering plugin callback')
+    window['platformPluginComm'].registerPluginDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
+  }
+
+  dataFromPlatform (data) {
+    console.log('Data received from platform', data)
+  }
+
+  sendDataToPlatform () {
+    const dataForPlatform = {someData: 'from plugin to platform'}
     window['platformPluginComm'].sendDataToPlatform(dataForPlatform)
   }
 }
