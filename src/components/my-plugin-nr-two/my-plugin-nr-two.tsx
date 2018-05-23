@@ -1,5 +1,5 @@
 import { Component } from '@stencil/core';
-
+import { pluginComm } from 'plugin-comm'
 @Component({
   tag: 'my-plugin-nr-two',
   shadow: true
@@ -18,7 +18,7 @@ export class MyPluginNrTwo {
 
   componentDidLoad() {
     console.log('registering plugin callback for "my-plugin-nr-two"')
-    window['platformPluginComm'].registerPluginDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
+    pluginComm.registerPluginDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
   }
 
   dataFromPlatform (data) {
@@ -27,6 +27,6 @@ export class MyPluginNrTwo {
 
   sendDataToPlatform () {
     const dataForPlatform = {someData: 'from plugin to platform'}
-    window['platformPluginComm'].sendDataToPlatform(dataForPlatform)
+    pluginComm.sendDataToPlatform(dataForPlatform)
   }
 }
