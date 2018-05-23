@@ -4,7 +4,7 @@ import { pluginComm } from 'plugin-comm'
   tag: 'my-plugin-nr-two',
   shadow: true
 })
-export class MyPluginNrTwo {
+export class MyPluginNrTwoComponent {
   render() {
     return (
       <div>
