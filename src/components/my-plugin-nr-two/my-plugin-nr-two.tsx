@@ -29,4 +29,8 @@ export class MyPluginNrTwoComponent {
     const dataForPlatform = {someData: 'from plugin to platform'}
     pluginComm.sendDataToPlatform(dataForPlatform)
   }
+
+  componentDidUnload(){
+    console.log('Plugin nr two removed from DOM')
+  }
 }
