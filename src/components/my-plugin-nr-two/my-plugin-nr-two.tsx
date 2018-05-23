@@ -22,7 +22,7 @@ export class MyPluginNrTwo {
   }
 
   dataFromPlatform (data) {
-    console.log('Data received from platform', data)
+    console.log('Data received from platform in plugin two', data)
   }
 
   sendDataToPlatform () {
