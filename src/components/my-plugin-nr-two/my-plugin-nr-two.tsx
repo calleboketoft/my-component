@@ -18,7 +18,7 @@ export class MyPluginNrTwoComponent {
 
   componentDidLoad() {
     console.log('registering plugin callback for "my-plugin-nr-two"')
-    pluginComm.registerPluginDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
+    pluginComm.pluginRegisterDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
   }
 
   dataFromPlatform (data) {
@@ -27,10 +27,11 @@ export class MyPluginNrTwoComponent {
 
   sendDataToPlatform () {
     const dataForPlatform = {someData: 'from plugin to platform'}
-    pluginComm.sendDataToPlatform(dataForPlatform)
+    pluginComm.pluginSendDataToPlatform(dataForPlatform)
   }
 
   componentDidUnload(){
     console.log('Plugin nr two: removed from DOM and now unregistering')
+    pluginComm.pluginUnregisterDataCallback('my-plugin-nr-two')
   }
 }
