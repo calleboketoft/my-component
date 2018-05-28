@@ -26,7 +26,7 @@ export class MyPluginNrTwoComponent {
   }
 
   sendDataToPlatform () {
-    const dataForPlatform = {someData: 'from plugin to platform'}
+    const dataForPlatform = {someData: 'from plugin nr two to platform'}
     pluginComm.pluginSendDataToPlatform(dataForPlatform)
   }
 
