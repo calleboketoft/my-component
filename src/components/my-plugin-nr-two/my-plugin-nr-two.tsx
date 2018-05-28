@@ -31,6 +31,6 @@ export class MyPluginNrTwoComponent {
   }
 
   componentDidUnload(){
-    console.log('Plugin nr two removed from DOM')
+    console.log('Plugin nr two: removed from DOM and now unregistering')
   }
 }
