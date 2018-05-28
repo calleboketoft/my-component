@@ -22,9 +22,9 @@
     "plugin-comm": "github:calleboketoft/plugin-comm"
   },
   "devDependencies": {
-    "@stencil/core": "^0.9.5",
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
+    "@stencil/core": "0.9.5",
+    "@stencil/dev-server": "0.0.18",
+    "@stencil/utils": "0.0.4",
     "@types/jest": "^21.1.1",
     "jest": "^21.2.1"
   },
