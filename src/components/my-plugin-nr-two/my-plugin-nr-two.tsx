@@ -6,11 +6,14 @@ import { pluginComm } from 'plugin-comm'
 })
 export class MyPluginNrTwoComponent {
   @State() pluginId
+  @State() messageFromPlatform
 
   render() {
     return (
       <div>
         Plugin nr two, id: { this.pluginId }
+        <br />
+        Message from platform: { this.messageFromPlatform }
         <br />
         <button onClick={ () => this.sendDataToPlatform() }>
           Send data to platform
@@ -32,6 +35,7 @@ export class MyPluginNrTwoComponent {
 
   dataFromPlatform (data) {
     console.log('Data received from platform in plugin two', data)
+    this.messageFromPlatform = JSON.stringify(data);
   }
 
   sendDataToPlatform () {
