@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "stencil build",
+    "build:dev": "stencil build --dev",
     "build:watch": "stencil build --dev --watch",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
