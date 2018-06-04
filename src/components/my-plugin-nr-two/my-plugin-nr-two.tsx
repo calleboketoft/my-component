@@ -39,7 +39,13 @@ export class MyPluginNrTwoComponent {
   }
 
   sendDataToPlatform () {
-    const dataForPlatform = {someData: 'from plugin nr two to platform'}
+    const dataForPlatform = {
+      type: '[message-from-plugin]',
+      payload: {
+        pluginId: this.pluginId,
+        message: 'well hello there'
+      }
+    }
     pluginComm.pluginSendDataToPlatform(dataForPlatform)
   }
 }
