@@ -19,7 +19,7 @@
     "test.watch": "jest --watch"
   },
   "dependencies": {
-    "plugin-comm": "github:calleboketoft/plugin-comm#1.0.0"
+    "plugin-comm": "github:calleboketoft/plugin-comm#1.0.3"
   },
   "devDependencies": {
     "@stencil/core": "0.9.7",

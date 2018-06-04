@@ -31,7 +31,7 @@ declare global {
 
   namespace StencilComponents {
     interface MyPluginNrTwo {
-
+      'pluginId': any;
     }
   }
 
@@ -54,7 +54,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MyPluginNrTwoAttributes extends HTMLAttributes {
-
+      'pluginId'?: any;
     }
   }
 }

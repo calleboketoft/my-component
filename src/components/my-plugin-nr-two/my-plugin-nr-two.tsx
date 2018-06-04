@@ -1,11 +1,11 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Prop } from '@stencil/core';
 import { pluginComm } from 'plugin-comm'
 @Component({
   tag: 'my-plugin-nr-two',
   shadow: true
 })
 export class MyPluginNrTwoComponent {
-  @State() pluginId
+  @Prop() pluginId
   @State() messageFromPlatform
 
   render() {
@@ -23,7 +23,7 @@ export class MyPluginNrTwoComponent {
   }
 
   componentDidLoad() {
-    this.pluginId = pluginComm.pluginRegisterDataCallback('my-plugin-nr-two', this.dataFromPlatform.bind(this))
+    pluginComm.pluginRegisterDataCallback(this.pluginId, this.dataFromPlatform.bind(this))
     console.log('registering plugin callback for "my-plugin-nr-two"')
     console.log(this.pluginId)
   }
