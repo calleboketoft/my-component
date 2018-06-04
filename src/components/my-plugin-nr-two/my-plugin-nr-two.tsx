@@ -43,7 +43,7 @@ export class MyPluginNrTwoComponent {
       type: '[message-from-plugin]',
       payload: {
         pluginId: this.pluginId,
-        message: 'well hello there'
+        message: 'well hello there: ' + Math.random()
       }
     }
     pluginComm.pluginSendDataToPlatform(dataForPlatform)
