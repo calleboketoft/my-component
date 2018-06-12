@@ -20,7 +20,7 @@
     "test.watch": "jest --watch"
   },
   "dependencies": {
-    "plugin-comm": "github:calleboketoft/plugin-comm#1.0.7"
+    "lime-web-component-platform": "github:Lundalogik/lime-web-component-platform"
   },
   "devDependencies": {
     "@stencil/core": "0.9.7",

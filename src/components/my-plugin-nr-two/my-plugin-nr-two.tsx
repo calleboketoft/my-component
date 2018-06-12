@@ -1,51 +1,22 @@
-import { Component, State, Prop } from '@stencil/core';
-import { pluginComm } from 'plugin-comm'
+import { Component, Prop, State } from '@stencil/core';
+import { LimeWebComponentPlatform } from 'lime-web-component-platform/lime-web-component-platform.interface'
+
 @Component({
   tag: 'my-plugin-nr-two',
   shadow: true
 })
 export class MyPluginNrTwoComponent {
-  @Prop() pluginId
-  @State() messageFromPlatform
-
+  @State() pluginName = 'my-plugin-nr-two'
+  @Prop() limeWebComponentPlatform: LimeWebComponentPlatform
   render() {
     return (
-      <div>
-        Plugin nr two, id: { this.pluginId }
-        <br />
-        Message from platform: { this.messageFromPlatform }
-        <br />
-        <button onClick={ () => this.sendDataToPlatform() }>
-          Send data to platform
-        </button>
-      </div>
+      <button onClick={ () => this.logSomethingOnPlatform() }>
+        Make platform log something
+      </button>
     );
   }
 
-  componentDidLoad() {
-    pluginComm.pluginRegisterDataCallback(this.pluginId, this.dataFromPlatform.bind(this))
-    console.log('registering plugin callback for "my-plugin-nr-two"')
-    console.log(this.pluginId)
-  }
-
-  componentDidUnload(){
-    console.log('Plugin nr two: removed from DOM and now unregistering')
-    pluginComm.pluginUnregisterDataCallback(this.pluginId)
-  }
-
-  dataFromPlatform (data) {
-    console.log('Data received from platform in plugin two', data)
-    this.messageFromPlatform = JSON.stringify(data);
-  }
-
-  sendDataToPlatform () {
-    const dataForPlatform = {
-      type: '[message-from-plugin]',
-      payload: {
-        pluginId: this.pluginId,
-        message: 'well hello there: ' + Math.random()
-      }
-    }
-    pluginComm.pluginSendDataToPlatform(dataForPlatform)
+  public logSomethingOnPlatform () {
+    this.limeWebComponentPlatform.logMessage(this.pluginName)
   }
 }

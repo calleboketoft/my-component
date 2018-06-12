@@ -26,12 +26,15 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import {
+  LimeWebComponentPlatform,
+} from 'lime-web-component-platform/lime-web-component-platform.interface';
 
 declare global {
 
   namespace StencilComponents {
     interface MyPluginNrTwo {
-      'pluginId': any;
+      'limeWebComponentPlatform': LimeWebComponentPlatform;
     }
   }
 
@@ -54,7 +57,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MyPluginNrTwoAttributes extends HTMLAttributes {
-      'pluginId'?: any;
+      'limeWebComponentPlatform'?: LimeWebComponentPlatform;
     }
   }
 }
