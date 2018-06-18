@@ -11,7 +11,7 @@ exports.config = {
   ],
   copy: [
     {
-      src: 'lwc-manifest.json'
+      src: 'lime-web-component.manifest.json'
     }
   ]
 };
