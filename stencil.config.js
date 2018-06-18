@@ -6,8 +6,7 @@ exports.config = {
     },
     {
       type: 'www',
-      serviceWorker: false,
-      buildDir: '../..'
+      serviceWorker: false
     }
   ]
 };
