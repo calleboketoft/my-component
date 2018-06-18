@@ -8,6 +8,11 @@ exports.config = {
       type: 'www',
       serviceWorker: false
     }
+  ],
+  copy: [
+    {
+      src: 'lwc-manifest.json'
+    }
   ]
 };
 
